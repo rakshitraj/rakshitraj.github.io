@@ -1,0 +1,185 @@
+\documentclass{article}
+	\usepackage[a4paper]{geometry}
+    \usepackage{fullpage}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{textcomp}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{}
+    \usepackage{fontawesome5}
+    \usepackage{hyperref}
+    \usepackage{tikz}
+    %\textheight=347mm
+    \pagestyle{empty}
+    \raggedright
+
+    %\renewcommand{\encodingdefault}{cg}
+%\renewcommand{\rmdefault}{lgrcmr}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\area} [2] {
+    \vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
+}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\newcommand{\employer} [3] {
+    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+}
+
+\newcommand{\contact} [3] {
+    \vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
+}
+
+\newenvironment{achievements}{
+    \begin{list}
+        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
+
+\newcommand{\school} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
+
+\newcommand{\grade}[1]{%
+\begin{tikzpicture}
+\clip (1em-.3em,-.3em) rectangle (5em +.5em ,.3em);
+\begin{scope}
+\clip (1em-.3em,-.3em) rectangle (#1em +.5em ,.3em);
+\foreach \x in {1,2,...,5}{
+ \path[fill=black] (\x em,0) circle (.25em);
+}
+\end{scope}
+\foreach \x in {1,2,...,5}{
+ \draw (\x em,0) circle (.25em);
+}
+\end{tikzpicture}%
+}
+
+% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{document}
+\vspace*{-40pt}
+
+    
+
+%==== Profile ====%
+\vspace*{-10pt}
+\begin{center}
+	{\Huge \scshape {Rakshit \textbf{Raj}}}\\	
+    \vspace{3mm}
+	{\faMapMarker\ Mumbai, IN}	 $\cdot$ 	{\faEnvelope\ rraj.rakshit@gmail.com} $\cdot$ {\faMobile\ +91 900 6400 602} \\
+	 \vspace{1mm}
+	 {\faLinkedin\ \href{http://www.linkedin.com/in/rakshitraj}{linkedin.com/rakshitraj}} $\cdot$ 	{\faGithub\ \href{http://www.github.com/rakshitraj}{github.com/rakshitraj}}	 $\cdot$ 	{\faMedium \href{http://www.meduim.com/@rakshitr}{  medium.com/@rakshitr}}\\
+\end{center}
+
+
+
+\vspace{1mm}
+
+%==== Experience ====%
+\header{\faSuitcase\ Experience}
+\vspace{1mm}
+
+\textbf{Deloitte (US India)} \hfill Mumbai, IN\\
+\textit{Analyst, Analytics and Cognitive} \hfill July 2021 - Present\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item SQL Developer - Data Quality and Data Readiness Team, I validate data quality and develop frameworks to streamline the data quality validation process
+\end{itemize}
+
+%==== Education ====%
+\header{\faGraduationCap\ Education}
+\textbf{National Institute of Technology Nagaland} \hfill Dimapur, IN\\
+B. Tech Electrical \& Electronics Engineering \textit{CGPA: 8,4 } \hfill Aug 2017 - Jun 2021\\
+\vspace{2mm}
+
+
+%==== Skills ====%
+
+\header{\faTasks\ Skills}
+\begin{tabular}{ l l }
+	Programming Languages:  & \textbf{C++}, C, Python, Java, BASH, SQL, R, HTML                                    \\
+	Software and Libraries: & CMake, GDB, pyTorch, Keras, TensorFlow, OpenCV, ROS, Gazebo, \LaTeX                      \\
+	Technology:             & \textbf{AWS}, GDB, Git, Networking(TCP/IP),  Jupyter, Docker                                \\
+	IDE :                   & \textbf{vim}, VS Code, pyCharm, Anaconda Suite, mySQL, Oracle SQL Developer , MatLab            \\
+	Hardware:               & NVIDIA Jetson, Raspberry Pi, NI myRIO (FPGA), Arduino (ASIC) (atmega) \\
+	Operating Systems:      & Ubuntu, Linux (Debian and Fedora flavors),  Windows                    \\
+	Expertise:              & Machine Learning \& AI, C++, Operations Research (Control \& Optimization)     \\
+	Interests:              & Reinforcement Learning, NLP, Competitive Programming     \\
+\end{tabular}
+\vspace{2mm}
+
+%==== Publications ====%
+
+\header{\faPrint\ Publications}
+{\textbf{Parameter Estimation of a Permanent Magnet Synchronous Motor using Whale Optimization Algorithm, IEEE 2018}}
+\\{\sl Whale Optimization Algorithm, Computational modeling, Optimization,
+Parameter estimation} \\
+{ \faLink\ \href{https://doi.org/10.1109/RAETCS.2018.8443839}{DOI: 10.1109/RAETCS.2018.8443839}}
+% \vspace*{2mm}
+\vspace*{3mm}
+
+%==== Projects ====%
+
+\header{\faMicrochip\ Relevant Project work}
+{\textbf{Landmark Classsification and Tagging, 2021}} 
+\\{\sl CNN, Transfer Learning, Hyperparameter tuning, pyTorch, python} \\
+- Constructing CNNs from scratch to identify landmarks in sample image.\\- Created end-to-end ML design process to preprocess, design and train CNN both from scratch and using Transfer learning.\\
+\vspace*{2mm}
+{\textbf{Deploying a Sentiment Analysis Model, 2021}} 
+\\{\sl Amazon Sagemaker, AWS, RNN, Sagemaker API, pyTorch} \\
+- Construct RNN for determining the sentiment of a movie review on the IMDB data set and deploy with Amazon’s SageMaker service. \\- Constructed a simple web app which will interact with the deployed model\\
+\vspace*{2mm}
+{\textbf{Fire Hazard Detection and Reporting using Computer Vision, 2021}} 
+\\{\sl Computer Vision, ResNet-50, Socket Programming, Twilio messaging API, Networking} \hfill \\
+- Bulit a low cost, minimalist, monocular system using Raspberry Pi to monitor and report fire-hazard of fatality to transformers using Computer Vision. Trained model using Transfer learning.\\
+\vspace*{3mm}
+
+%==== Honours and Awards ====%
+
+\header{\faBookmark\ Certifications}
+\textbf{Deep Learning Nanodegree} \hfill July \textquotesingle{}21 \textbar{} Udacity\\
+
+\vspace*{1mm}
+\textbf{Deep Reinforcement Learning Nanodegree} \hfill July \textquotesingle{}21 \textbar{} Udacity\\
+
+\vspace*{1mm}
+\textbf{Algorithmic Toolbox} \hfill Sep \textquotesingle{}20 \textbar{} Coursera\\
+
+\vspace*{1mm}
+\textbf{SQL Essential Training} \hfill July \textquotesingle{}21 \textbar{} LinkedIn Learning\\
+
+\vspace*{1mm}
+\textbf{C++  Nanodegree} \hfill \textbf{Pursuing.} Graduating Jan \textquotesingle{}22 \textbar{} Udacity\\
+
+\vspace*{9mm}
+
+\rfoot{\textit{Resume - Rakshit Raj, 14 Dec 2021}}
+\end{document}
